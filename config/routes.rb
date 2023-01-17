@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :photos
   #resources :users, only: :show
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get ":username/liked" => "photos#liked", as: :liked_photos
   #must go last becasue its super general route
-  get "/:username"  => "users#show"
+  get ":username"  => "users#show", as: :user
 end
